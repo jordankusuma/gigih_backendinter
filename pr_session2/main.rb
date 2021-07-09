@@ -15,7 +15,7 @@ villains = [archer, spear, sword]
 heroes = [jin, yuna, ishikawa]
 
 i = 1
-until (jin.die? || heroes.size == 0 || villains.size == 0)
+until (jin.die? || heroes.empty? || villains.empty?)
   puts "=============== Turn #{i} ======================="
   puts "\n"
 
@@ -36,7 +36,7 @@ until (jin.die? || heroes.size == 0 || villains.size == 0)
 
   number = gets.chomp.to_i()
 
-  while (nomor != 1 && nomor != 2)
+  while (number != 1 && number != 2)
     puts "please choose correctly"
     nomor = gets.chomp.to_i()
   end

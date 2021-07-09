@@ -12,7 +12,7 @@ class Hero < Person
     else
       @hitpoint -= damage
     end
-    puts @dodge
+    #puts @dodge
   end
 
   def attack(other_person)
