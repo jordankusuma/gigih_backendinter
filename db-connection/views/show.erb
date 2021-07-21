@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Detail Items</h1>
+
+    <% items.each do |item| %>
+    
+    <p>Item name : <%= item.name %></p><br>
+
+    <p>Item price : <%= item.price %></p><br>
+
+    <p>Item category : <%= item.category.name %></p><br>
+
+    <% end %>
+</body>
+</html>

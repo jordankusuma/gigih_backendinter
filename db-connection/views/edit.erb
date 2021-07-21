@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit item with categories</h1>
+    <% items.each do |item| %>
+    <form action="/items/<%= item.id %>/edit/" method="POST">
+        <input type="text" name="name" placeholder="name" value="<%= item.name %>">
+        <input type="number" name="price" placeholder="price" value="<%= item.price %>">
+        <select name="pick_category">
+        <option value="<%= item.category.id %>" id="<%= item.category.id %>"><%= item.category.name %></option>
+        <% categories.each do |category| %>
+            <% if (item.category.id != category.id) %>
+              <option value="<%= category.id %>" id="<%= category.id %>"><%= category.name %></option> 
+            <% end %>
+        <% end %>
+        </select>
+        <input type="submit" name="submit">
+    </form>
+    <% end %>
+</body>
+</html>
