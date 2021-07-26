@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Items</h1>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        <% items.each do |item| %>
+        <tr>
+            <td><%= item.name %></td>
+            <td><%= item.price %></td>
+            <td><a href="/items/<%= item.id %>/show">Show</a></td>
+            <td><a href="/items/<%= item.id %>/edit">Edit</a></td>
+            <td><form action="/items/<%= item.id %>/delete"><input type="submit" value="delete" /></form></td>
+            <td><a href="/items/<%= item.id %>/categories">Category</a></td>
+        </tr>        
+        <% end %>
+    </table>
+    <br>
+    <a href="/items/new">Create item with category</a>
+
+    <h1>Categories</h1>
+    <table>
+        <tr>
+            <th>No</th>
+            <th>name</th>
+        </tr>
+        <% categories.each_with_index do |category, index| %>
+        <tr>
+            <td><%= index + 1  %></td>
+            <td><%= category.name %></td>
+            <td><a href="/categories/<%= category.id %>/edit">Edit</a></td>
+            <td><form action="/categories/<%= category.id %>/delete"><input type="submit" value="delete" /></form></td>
+            <td><a href="/categories/<%= category.id %>/items">List Item</a></td>
+        </tr>        
+        <% end %>
+    </table>
+    <br>
+    <a href="/categories/new">Create Category </a>
+
+</body>
+</html>

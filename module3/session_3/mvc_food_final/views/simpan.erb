@@ -1,0 +1,12 @@
+<h1>Edit Categories based Items</h1>
+<% items.each do |category| %>
+    <input type="hidden" name="pick_id" value="<%= category.id %>">
+    <select name="pick_category">
+        <option value="<%= category.id %>" id="<%= category.id %>"><%= category.name %></option>
+            <% categories.each do |category1| %>
+                <% if (category.id != category1.id)%>
+                    <option value="<%= category1.id %>" id="<%= category1.id %>"><%= category1.name %></option>
+                <% end %>
+            <% end %>
+    </select>
+<% end %>
