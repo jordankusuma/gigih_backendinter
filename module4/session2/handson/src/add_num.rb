@@ -5,11 +5,15 @@ class AddNum
         else
             last_index = input.length() - 1
             input.reverse_each do |num|
-                input[last_index] = num + 1
-                break
+                if (!more_than_one_digit?(num))
+                    input[last_index] = num + 1
+                    break
+                end
             end
         end
         input
     end
-    
+    def more_than_one_digit?(input)
+        input >= 9
+    end
 end
