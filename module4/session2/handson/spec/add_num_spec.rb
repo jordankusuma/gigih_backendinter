@@ -36,4 +36,18 @@ RSpec.describe AddNum do
 
         expect(result).to eq([3, 0])
     end
+    it "returns [1, 0, 0] when input is [9, 9]" do
+        add_number = AddNum.new
+
+        result = add_number.add([9, 9])
+
+        expect(result).to eq([1, 0, 0])
+    end
+    it "returns [1, 0, 0, 0] when input is [9, 9, 9]" do
+        add_number = AddNum.new
+
+        result = add_number.add([9, 9, 9])
+
+        expect(result).to eq([1, 0, 0, 0])
+    end
 end

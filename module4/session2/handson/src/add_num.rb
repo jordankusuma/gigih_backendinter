@@ -8,6 +8,9 @@ class AddNum
                 if (more_than_one_digit?(num) && last_index > 0)
                     input[last_index] = 0
                     last_index = last_index - 1
+                elsif (more_than_one_digit?(num) && last_index == 0)
+                    input[last_index] = 0
+                    input.unshift(1)
                 else
                     input[last_index] = num + 1
                     break
