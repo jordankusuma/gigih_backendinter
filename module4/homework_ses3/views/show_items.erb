@@ -1,0 +1,19 @@
+<h1>SHOW ITEMS IN CATEGORY ID = <%= categories.id%></h1>
+
+<a href='/'> << Back </a>
+
+<h1>List Item</h1>
+<table>
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        <% categories.items.each do |item| %>
+        <tr>
+            <td><%= item.id %></td>
+            <td><%= item.name %></td>
+            <td><%= item.price %></td>
+        </tr>    
+        <% end %>    
+</table>
